@@ -141,13 +141,13 @@ def checkForm(request):
         helper = FormHelper()
         helper.form_id = 'form_exec'
         helper.form_action = '.'
-        form_html = render_crispy_form(ExecutionForm(None), helper)
-        return {'success': True, 'form_html': form_html}
+        #form_html = render_crispy_form(ExecutionForm(None), helper)
+        return {'success': True}
     else:
         helper = FormHelper()
         helper.form_id = 'form_exec'
-        helper.form_action = '.'
-        form_html = render_crispy_form(form, helper, RequestContext(request))
+        request_context = RequestContext(request)
+        form_html = render_crispy_form(form, context=request_context)
         return {'success': False, 'form_html': form_html}
 
 
