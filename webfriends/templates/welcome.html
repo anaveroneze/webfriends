@@ -1,0 +1,17 @@
+{%extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block head_title%}{{title}}{%endblock%}
+
+{% block jumbotron%}
+  <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Portal Algoritmo</h1>
+        <p>Texto breve explicando os objetivos</p>
+        <p>Convite para registro e experimentar</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="{% url 'register_custom' %}" role="button">Registre-se &raquo;</a>
+        </p>
+      </div>      
+{%endblock%}
