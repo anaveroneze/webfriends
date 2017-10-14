@@ -7,7 +7,7 @@ class MyRegistrationView(RegistrationView):
 
 	form_class = UsuarioFriendsForm
 
-	def register(self,request,form_class):
+	def register(self, form_class):
 		new_user = super(MyRegistrationView,self).register(request, form_class)
 		user_profile = UsuarioFriends()
 		user_profile.usuario = new_user
