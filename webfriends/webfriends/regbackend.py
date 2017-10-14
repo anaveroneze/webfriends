@@ -15,4 +15,4 @@ class MyRegistrationView(RegistrationView):
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
 		#return user_profile
-		return redirect('home')
+		return redirect('/')
