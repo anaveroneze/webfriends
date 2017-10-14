@@ -9,5 +9,3 @@ https://{{ site.domain }}{% url 'registration_activate' activation_key %}
 
 
 {% blocktrans %}Este link é válido por {{ expiration_days }} dias.{% endblocktrans %}
-
--Team CFE
