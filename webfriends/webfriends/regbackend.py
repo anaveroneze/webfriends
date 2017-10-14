@@ -16,5 +16,5 @@ class MyRegistrationView(RegistrationView):
 		user_profile.nickname = form_class.cleaned_data['nickname']
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
-		HttpResponseRedirect(reverse('home'))
+		return HttpResponseRedirect(reverse('home'))
 		#return user_profile
