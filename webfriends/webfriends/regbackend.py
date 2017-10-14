@@ -2,6 +2,7 @@
 from registration.backends.default.views import RegistrationView
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
+from registration.forms import RegistrationForm
 
 class MyRegistrationView(RegistrationView):
 
