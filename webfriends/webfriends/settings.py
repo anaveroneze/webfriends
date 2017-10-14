@@ -36,15 +36,15 @@ SECRET_KEY = '*w@9e5=q7leo^uw@d51l-!5h*!545&7xn_6#6@3yb61j^p!h&p'
 DEBUG = True
 
 # email configuracao
+EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 ALLOWED_HOSTS = []
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'anawebfof@gmail.com'
 SERVER_EMAIL = 'anawebfof@gmail.com'
 DEFAULT_FROM_EMAIL = 'anawebfof@gmail.com'
-EMAIL_HOST_PASSWORD = 'egnenbyir'
+EMAIL_HOST_PASSWORD = 'viwovton'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 #EMAIL_HOST = 'smtp.sendgrid.net'
 #EMAIL_HOST_USER = os.environ['SENDGRID_USER']
 #EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
@@ -141,6 +141,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # django registration redux
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_EMAIL_HTML = False
 
 SITE_ID = 1
 
