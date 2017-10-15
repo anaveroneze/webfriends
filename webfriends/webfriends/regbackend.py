@@ -16,4 +16,7 @@ class MyRegistrationView(RegistrationView):
 		user_profile.nickname = form_class.cleaned_data['nickname']
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
-		return HttpResponse("login.html")
+		return user_profile
+
+ 	def get_success_url(self, user):
+        return HttpResponse("login.html")
