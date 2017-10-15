@@ -2,8 +2,7 @@
 from registration.backends.default.views import RegistrationView
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.contrib import messages
 
 class MyRegistrationView(RegistrationView):
 
@@ -16,4 +15,5 @@ class MyRegistrationView(RegistrationView):
 		user_profile.nickname = form_class.cleaned_data['nickname']
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
+		messages.add_message(messages.INFO, 'Yeehaw!')
 		return user_profile

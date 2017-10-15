@@ -141,8 +141,8 @@ def checkForm(request):
         helper = FormHelper()
         helper.form_id = 'form_exec'
         helper.form_action = '.'
-        #form_html = render_crispy_form(ExecutionForm(None), helper)
-        return {'success': True}
+        form_html = render_crispy_form(ExecutionForm(None), helper)
+        return {'success': True, 'form_html': form_html}
     else:
         helper = FormHelper()
         helper.form_id = 'form_exec'
