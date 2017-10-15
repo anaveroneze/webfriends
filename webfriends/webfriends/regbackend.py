@@ -1,6 +1,6 @@
 # from registration.views import RegistrationView
 from registration.backends.default.views import RegistrationView
-from django.contrib import messages
+from django.conf.urls import url
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
 from django.http import HttpResponse
@@ -19,4 +19,4 @@ class MyRegistrationView(RegistrationView):
 		return user_profile
 
 	def get_success_url(self, user):
-		return HttpResponse("login.html")
+		return '/login/'
