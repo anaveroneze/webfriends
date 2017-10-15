@@ -18,4 +18,4 @@ class MyRegistrationView(RegistrationView):
 		return user_profile
 
 	def get_success_url(self, user):
-		return '/home/'
+		return '/login/'
