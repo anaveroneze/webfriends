@@ -8,7 +8,6 @@ from experiment.models import UsuarioFriends
 class MyRegistrationView(RegistrationView):
 
 	form_class = UsuarioFriendsForm
-	template_name = 'registration_form.html'
 
 	def register(self, form_class):
 		new_user = super(MyRegistrationView,self).register(form_class)
