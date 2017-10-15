@@ -3,8 +3,7 @@ from registration.backends.default.views import RegistrationView
 from django.contrib import messages
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.shortcuts import render_to_response
 
 class MyRegistrationView(RegistrationView):
 
