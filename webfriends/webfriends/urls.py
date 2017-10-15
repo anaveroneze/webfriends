@@ -22,7 +22,7 @@ urlpatterns = [
         name='downloadOutputFile'),
 
     #django site/login
-    url(r'^login/$', login, name='login'),  
+    url(r'^login/$', login, name='login'),
     #django admin
     url(r'^experiments/result$', 'experiment.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),
