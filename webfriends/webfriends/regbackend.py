@@ -5,6 +5,7 @@ from django.conf.urls import url
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
 from django.contrib import messages
+from django.shortcuts import render_to_response
 
 class MyRegistrationView(RegistrationView):
 
