@@ -1,5 +1,6 @@
 # from registration.views import RegistrationView
 from registration.backends.default.views import RegistrationView
+from django.contrib import messages
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
 from django.http import HttpResponseRedirect
@@ -16,4 +17,6 @@ class MyRegistrationView(RegistrationView):
 		user_profile.nickname = form_class.cleaned_data['nickname']
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
-		return HttpResponseRedirect(reverse('login'))
+		#return HttpResponseRedirect(reverse('login'))
+		messages.warning("ooops, you don't have a list YET! click on button to create one!")
+		return render_to_response('login.html', message='Save complete')
