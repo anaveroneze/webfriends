@@ -19,6 +19,6 @@ class MyRegistrationView(RegistrationView):
 		user_profile.save()
 		return user_profile
 
-	def my_view(request):
-		messages.success(request, 'O email de confirmação foi enviado.')
-		return '/login/'
+	def get_success_url(self, user):
+		return render_to_response('login.html', message='Save complete')
+		#return '/login/'
