@@ -18,5 +18,4 @@ class MyRegistrationView(RegistrationView):
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
 		#return HttpResponseRedirect(reverse('login'))
-		messages.warning("ooops, you don't have a list YET! click on button to create one!")
 		return render_to_response('login.html', message='Save complete')
