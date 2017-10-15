@@ -18,5 +18,5 @@ class MyRegistrationView(RegistrationView):
 		user_profile.save()
 		return user_profile
 
- 	def get_success_url(self, user):
-        return HttpResponse("login.html")
+	def get_success_url(self, user):
+		return HttpResponse("login.html")
