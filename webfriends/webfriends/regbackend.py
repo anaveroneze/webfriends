@@ -19,5 +19,5 @@ class MyRegistrationView(RegistrationView):
 		return user_profile
 
 	def get_success_url(self, user):
-		messages.success(request, 'O email de confirmação foi enviado!')
+		messages.success(request, 'O email de confirmação foi enviado')
 		return '/login/'
