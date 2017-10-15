@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 import regbackend
 
+from django.contrib.auth.views import login
+
 
 urlpatterns = [
     # urls experiment
@@ -19,6 +21,8 @@ urlpatterns = [
     url(r'^experiments/downloadOutputFile', 'experiment.views.downloadOutputFile',
         name='downloadOutputFile'),
 
+    #django site/login
+    url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),  
     #django admin
     url(r'^experiments/result$', 'experiment.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),
