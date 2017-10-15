@@ -1,3 +1,4 @@
+#coding: utf-8
 # from registration.views import RegistrationView
 from registration.backends.default.views import RegistrationView
 from django.conf.urls import url
