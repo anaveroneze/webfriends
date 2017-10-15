@@ -2,7 +2,7 @@
 from registration.backends.default.views import RegistrationView
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 class MyRegistrationView(RegistrationView):

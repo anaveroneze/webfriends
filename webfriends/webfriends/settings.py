@@ -145,7 +145,9 @@ REGISTRATION_EMAIL_HTML = False
 
 SITE_ID = 2
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
+
 
 # Celery stuff
 
