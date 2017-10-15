@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 import regbackend
 
-from django.contrib.auth.views import login
+from django.contrib.auth.views import registration_complete
 
 
 urlpatterns = [
@@ -22,7 +22,7 @@ urlpatterns = [
         name='downloadOutputFile'),
 
     #django site/login
-    url(r'^login/$', login, name='login'),
+    url(r'^registration_complete/$', registration_complete, name='registration_complete'),
     #django admin
     url(r'^experiments/result$', 'experiment.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),

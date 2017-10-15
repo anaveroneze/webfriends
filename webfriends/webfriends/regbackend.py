@@ -4,12 +4,11 @@ from registration.backends.default.views import RegistrationView
 from django.conf.urls import url
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
-from django.contrib import messages
-from django.shortcuts import render_to_response
 
 class MyRegistrationView(RegistrationView):
 
 	form_class = UsuarioFriendsForm
+	template_name = 'registration_form.html'
 
 	def register(self, form_class):
 		new_user = super(MyRegistrationView,self).register(form_class)
@@ -21,5 +20,4 @@ class MyRegistrationView(RegistrationView):
 		return user_profile
 
 	def get_success_url(self, user):
-		return render_to_response('login.html', message='Save complete')
-		#return '/login/'
+		return '/registration_complete/'
