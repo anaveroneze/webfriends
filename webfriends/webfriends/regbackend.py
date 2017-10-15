@@ -3,7 +3,7 @@ from registration.backends.default.views import RegistrationView
 from django.contrib import messages
 from experiment.forms import UsuarioFriendsForm
 from experiment.models import UsuarioFriends
-from django.shortcuts import render_to_response
+from django.http import HttpResponse
 
 class MyRegistrationView(RegistrationView):
 
@@ -16,5 +16,4 @@ class MyRegistrationView(RegistrationView):
 		user_profile.nickname = form_class.cleaned_data['nickname']
 		user_profile.company = form_class.cleaned_data['company']
 		user_profile.save()
-		#return HttpResponseRedirect(reverse('login'))
-		return render_to_response('login.html', message='Save complete')
+		return HttpResponse("login.html")
