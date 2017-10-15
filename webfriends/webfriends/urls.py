@@ -19,8 +19,6 @@ urlpatterns = [
     url(r'^experiments/downloadOutputFile', 'experiment.views.downloadOutputFile',
         name='downloadOutputFile'),
 
-    #django site/login
-    url(r'^register/complete/$', TemplateView.as_view(template_name='registration/registration_complete.html'), name='registration_complete'),
     #django admin
     url(r'^experiments/result$', 'experiment.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),
@@ -29,6 +27,9 @@ urlpatterns = [
     url(r'^accounts/register/', regbackend.MyRegistrationView.as_view(),
         name='register_custom'),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    
+    url(r'^register/complete/$', TemplateView.as_view(template_name='registration/registration_complete.html'), name='registration_complete'),
+    url(r'^register/closed/$', TemplateView.as_view(template_name='registration/registration_closed.html'),name='registration_disallowed'),
 ]
 
 if settings.DEBUG:
