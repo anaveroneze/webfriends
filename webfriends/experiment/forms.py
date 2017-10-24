@@ -14,7 +14,7 @@ class ExecutionForm(forms.Form):
                                        required=True,
                                        to_field_name="nameAlg",
                                        )
-    Input = forms.FileField(required=False)
+    Input = forms.FileField(required=False, validators=[file_size])
 
 
 class ContactForm(forms.Form):
