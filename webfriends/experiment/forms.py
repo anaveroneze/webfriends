@@ -13,7 +13,6 @@ class ExecutionForm(forms.Form):
                                        required=True,
                                        to_field_name="nameAlg",
                                        )
-    file = Algorithm()
     Input = forms.FileField(required=False, validators=[file.file_size])
 
 
