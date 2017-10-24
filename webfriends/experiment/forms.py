@@ -2,7 +2,6 @@ from django import forms
 from registration.forms import RegistrationFormUniqueEmail
 from .models import Algorithms
 
-
 class UsuarioFriendsForm(RegistrationFormUniqueEmail):
     nickname = forms.CharField(required=False)
     company = forms.CharField(required=False)
@@ -14,7 +13,8 @@ class ExecutionForm(forms.Form):
                                        required=True,
                                        to_field_name="nameAlg",
                                        )
-    Input = forms.FileField(required=False, validators=[file_size])
+    file = Algorithm()
+    Input = forms.FileField(required=False, validators=[file.file_size])
 
 
 class ContactForm(forms.Form):
