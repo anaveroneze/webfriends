@@ -4,10 +4,15 @@ from registration.forms import RegistrationFormUniqueEmail
 from .models import Algorithms
 from django.core.exceptions import ValidationError
 
+from django.shortcuts import render
+from django.template import RequestContext
+
+#maximum size 25MB input file
 def file_size(value):
-    limit = 20971520
+    limit = 26214400
     if value.size > limit:
         raise ValidationError('Arquivo muito grande. Tamanho máximo deve ser de 20MB.')
+        return render(request, "experiments.html", context)
 
 class UsuarioFriendsForm(RegistrationFormUniqueEmail):
     nickname = forms.CharField(required=False)
@@ -21,7 +26,6 @@ class ExecutionForm(forms.Form):
                                        to_field_name="nameAlg",
                                        )
     Input = forms.FileField(required=False, validators=[file_size])
-
 
 class ContactForm(forms.Form):
     nome = forms.CharField()
