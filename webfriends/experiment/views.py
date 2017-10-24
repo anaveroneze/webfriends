@@ -88,6 +88,7 @@ def downloadInputFile(request):
         execution.inputFile, content_type='application/force-download')
     response[
         'Content-Disposition'] = 'attachment; filename="entrada-Experimento-' + str(expId) + '"'
+    raise forms.ValidationError(_(u'File type is not supported'))
     return response
     # return HttpResponseRedirect(reverse('home'))
 
