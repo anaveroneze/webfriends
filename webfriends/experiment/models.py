@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,7 +10,7 @@ class Algorithms(models.Model):
 
     def __unicode__(self):
         return self.nameAlg
-    
+
     def file_size(value):
         limit = 20971520
         if value.size > limit:
