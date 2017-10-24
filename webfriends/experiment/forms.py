@@ -19,10 +19,6 @@ class UsuarioFriendsForm(RegistrationFormUniqueEmail):
 
 
 class ExecutionForm(forms.Form):
-    def clean(self):
-    cleaned_data = super(FirstModelForm, self).clean()
-    return cleaned_data
-
     Algorithm = forms.ModelChoiceField(queryset=Algorithms.objects.all(),
                                        empty_label="---Selecione um algoritmo---",
                                        required=True,
