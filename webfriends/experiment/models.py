@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 
 class Algorithms(models.Model):
     idAlg = models.AutoField(primary_key=True)
@@ -11,11 +10,6 @@ class Algorithms(models.Model):
 
     def __unicode__(self):
         return self.nameAlg
-
-def file_size(value):
-    limit = 20971520
-    if value.size > limit:
-        raise ValidationError('Arquivo muito grande. Tamanho máximo deve ser de 20MB.')
 
 class UsuarioFriends(models.Model):
     nickname = models.CharField(
